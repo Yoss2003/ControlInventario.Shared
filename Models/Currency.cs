@@ -6,6 +6,7 @@ namespace ControlInventario.Shared.Models
     {
         [Key]
         public int Id { get; set; }
+        public string? CurrencyCode { get; set; }
 
         [Required]
         [StringLength(100)]
