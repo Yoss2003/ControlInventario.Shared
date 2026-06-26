@@ -94,5 +94,6 @@ namespace ControlInventario.Shared.Models
 
         [Required]
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
+        public string? SaleCurrency { get; set; }
     }
 }
