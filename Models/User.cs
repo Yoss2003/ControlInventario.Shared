@@ -34,5 +34,8 @@ namespace ControlInventario.Shared.Models
         public int? JobPositionId { get; set; }
         public int? AreaId { get; set; }
         public int? ContractTypeId { get; set; }
+
+        [NotMapped]
+        public string? RoleName { get; set; }
     }
 }
