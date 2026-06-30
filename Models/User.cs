@@ -37,5 +37,8 @@ namespace ControlInventario.Shared.Models
 
         [NotMapped]
         public string? RoleName { get; set; }
+        public int? CompanyId { get; set; }
+        public int StatusId { get; set; } = 2;
+        public bool MustChangePassword { get; set; } = true;
     }
 }
