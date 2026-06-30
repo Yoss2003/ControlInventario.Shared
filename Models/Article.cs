@@ -75,7 +75,6 @@ namespace ControlInventario.Shared.Models
         // Parámetros de Activo Fijo (Obligatorio estrictamente en Serialized)
         public int? UsefulLifeMonths { get; set; }
         public DateTime? WarrantyEndDate { get; set; }
-
         public string? Characteristics { get; set; }
         public string? Observation { get; set; }
 
@@ -89,14 +88,20 @@ namespace ControlInventario.Shared.Models
         public string? MainVoucherPath { get; set; }
 
         // Auditoría Básica del Primer Movimiento
+        public string? SaleCurrency { get; set; }
         [Required]
         public int ActionId { get; set; }
 
         [Required]
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
-        public string? SaleCurrency { get; set; }
 
         [NotMapped]
         public int QuantityInCart { get; set; }
+
+        [NotMapped]
+        public int? LoggedUserId { get; set; }
+
+        [NotMapped]
+        public string? LoggedUserFullName { get; set; }
     }
 }
