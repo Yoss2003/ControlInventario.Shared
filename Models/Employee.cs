@@ -1,31 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace ControlInventario.Shared.Models
+public class Employee
 {
-    public class Employee
-    {
-        [Key]
-        public int Id { get; set; }
+    public int Id { get; set; }
+    public int? UserId { get; set; } // Enlace con la cuenta
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public string? DNI { get; set; }
+    public int? Age { get; set; }
+    public string? BirthDate { get; set; }
+    public int? JobPositionId { get; set; }
+    public int? AreaId { get; set; }
+    public string? HireDate { get; set; }
+    public int? ContractTypeId { get; set; }
+    public int StatusId { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string FirstName { get; set; } = string.Empty;
+    [JsonIgnore]
+    public User? User { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string LastName { get; set; } = string.Empty;
-
-        [Required]
-        [StringLength(50)]
-        public string DNI { get; set; } = string.Empty;
-
-        [Required]
-        public int JobPositionId { get; set; }
-
-        [Required]
-        public int AreaId { get; set; }
-
-        [Required]
-        public int StatusId { get; set; }
-    }
+    [NotMapped]
+    public string? PictureUrl { get; set; }
 }

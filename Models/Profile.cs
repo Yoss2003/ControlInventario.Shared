@@ -27,5 +27,6 @@ namespace ControlInventario.Shared.Models
         public int? GraceDays { get; set; }
         public string? SmtpEmail { get; set; }
         public string? SmtpPassword { get; set; }
+        public string? SmtpApproverEmail { get; set; }
     }
 }

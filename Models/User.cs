@@ -1,44 +1,27 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using ControlInventario.Shared.Models;
 
-namespace ControlInventario.Shared.Models
+public class User
 {
-    public class User
-    {
-        [Key]
-        public int Id { get; set; }
+    public int Id { get; set; }
+    public string? Username { get; set; }
+    public string? Password { get; set; }
+    public string? Email { get; set; }
+    public string? PhoneNumber { get; set; }
+    public string? ProfilePictureUrl { get; set; }
+    public bool IsActive { get; set; }
 
-        [Required] public string FirstName { get; set; } = string.Empty;
-        [Required] public string LastName { get; set; } = string.Empty;
-        [Required] public string Username { get; set; } = string.Empty;
-        [Required] public string Password { get; set; } = string.Empty;
-        public string? Email { get; set; }
+    // 🚨 BORRAR: FirstName, LastName, Age, BirthDate, JobPositionId, AreaId, HireDate, ContractTypeId 🚨
 
-        public int? Age { get; set; }
-        public string? BirthDate { get; set; } = string.Empty;
-        public string? HireDate { get; set; } = string.Empty;
+    // CAMPOS DE SEGURIDAD
+    public int RoleId { get; set; }
+    public Role? Role { get; set; }
+    public int? CompanyId { get; set; }
+    public int StatusId { get; set; } = 2;
+    public bool MustChangePassword { get; set; } = true;
+    public string? TwoFactorSecret { get; set; }
+    public bool IsTwoFactorEnabled { get; set; }
 
-        // CAMPOS RELACIONALES
-        public string? PhoneNumber { get; set; }
-        public string? ProfilePictureUrl { get; set; }
-
-        // CAMPOS PARA GOOGLE AUTHENTICATOR
-        public bool IsActive { get; set; } = true;
-        public string? TwoFactorSecret { get; set; }
-        public bool IsTwoFactorEnabled { get; set; }
-
-        // RELACIONES HACIA LAS TABLAS (Foreign Keys)
-        public int? RoleId { get; set; }
-        public virtual Role? Role { get; set; }
-        public int? JobPositionId { get; set; }
-        public int? AreaId { get; set; }
-        public int? ContractTypeId { get; set; }
-
-        [NotMapped]
-        public string? RoleName { get; set; }
-        public int? CompanyId { get; set; }
-        public int StatusId { get; set; } = 2;
-        public bool MustChangePassword { get; set; } = true;
-    }
+    // 🌟 NUEVO: El puente hacia sus datos biográficos
+    public Employee? Employee { get; set; }
+    public DateTime? CreatedAt { get; set; } = DateTime.Now;
 }

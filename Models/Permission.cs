@@ -14,5 +14,7 @@ namespace ControlInventario.Shared.Models
         [Required]
         [StringLength(50)]
         public string SystemCode { get; set; } = string.Empty; // Ej: "CREATE_ARTICLES" (Este es el que leeremos en el código)
+
+        public List<RolePermission>? RolePermissions { get; set; }
     }
 }
