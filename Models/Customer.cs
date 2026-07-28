@@ -24,5 +24,6 @@ namespace ControlInventario.Shared.Models
 
         [StringLength(255)]
         public string? RegistrationDate { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }
