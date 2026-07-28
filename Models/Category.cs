@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 { 
@@ -31,5 +32,9 @@ namespace ControlInventario.Shared.Models
         public string? ModificationUser { get; set; }
         public DateTime? DeletionDate { get; set; }
         public string? DeletionUser { get; set; }
+        public bool IsActive { get; set; } = true;
+        [NotMapped]
+        public List<int>? SelectedUnitIds { get; set; } = new List<int>();
+        public List<CategoryMeasurementUnit>? CategoryMeasurementUnits { get; set; }
     }
 }

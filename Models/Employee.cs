@@ -21,4 +21,5 @@ public class Employee
 
     [NotMapped]
     public string? PictureUrl { get; set; }
+    public bool IsActive { get; set; } = true;
 }

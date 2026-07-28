@@ -22,5 +22,6 @@ namespace ControlInventario.Shared.Models
         public string Username { get; set; } = string.Empty;
 
         public string? Alias { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }
