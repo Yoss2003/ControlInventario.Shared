@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
@@ -25,5 +26,8 @@ namespace ControlInventario.Shared.Models
         [StringLength(255)]
         public string? RegistrationDate { get; set; }
         public bool IsActive { get; set; } = true;
+
+        [NotMapped]
+        public string Initial => string.IsNullOrEmpty(Name) ? "" : Name[0].ToString().ToUpper();
     }
 }
