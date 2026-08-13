@@ -46,6 +46,8 @@ namespace ControlInventario.Shared.Models
         [Required]
         public TrackingMode Tracking { get; set; }
 
+        public string? Presentation { get; set; }
+
 
         // ==========================================
         // 3. LOGÍSTICA Y STOCK
