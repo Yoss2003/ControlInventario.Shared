@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema; // 🌟 1. Agrega esto arriba
-
-namespace ControlInventario.Shared.Models
+﻿namespace ControlInventario.Shared.Models
 {
     public enum PaymentType
     {
@@ -28,6 +24,8 @@ namespace ControlInventario.Shared.Models
         public string? CustomerName { get; set; }
         public decimal TotalAmount { get; set; }
         public string? Notes { get; set; }
+        public decimal? AmountReceived { get; set; }
+        public decimal? ChangeGiven { get; set; }
         public List<SaleDetail> SaleDetails { get; set; } = new List<SaleDetail>();
     }
 }
