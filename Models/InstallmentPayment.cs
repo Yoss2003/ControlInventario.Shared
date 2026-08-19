@@ -10,5 +10,6 @@ namespace ControlInventario.Shared.Models
         public double PaymentAmount { get; set; }
         [Required] public string PaymentDate { get; set; } = string.Empty;
         public string? Observation { get; set; }
+        public int CompanyId { get; set; }
     }
 }

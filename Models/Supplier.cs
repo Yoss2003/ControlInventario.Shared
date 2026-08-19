@@ -50,5 +50,6 @@ namespace ControlInventario.Shared.Models
         [StringLength(100)]
         public string? Departamento { get; set; }
         public bool IsActive { get; set; } = true;
+        public int CompanyId { get; set; }
     }
 }

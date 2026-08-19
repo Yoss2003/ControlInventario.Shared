@@ -20,5 +20,6 @@ namespace ControlInventario.Shared.Models
         public decimal UnitPrice { get; set; }
 
         public decimal SubTotal { get; set; }
+        public int CompanyId { get; set; }
     }
 }

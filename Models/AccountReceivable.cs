@@ -15,5 +15,6 @@ namespace ControlInventario.Shared.Models
         public string? PaymentDate { get; set; }
         [Required] public string Status { get; set; } = "Pending";
         [Required] public string Frequency { get; set; } = string.Empty;
+        public int CompanyId { get; set; }
     }
 }

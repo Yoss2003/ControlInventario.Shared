@@ -13,5 +13,6 @@ namespace ControlInventario.Shared.Models
         public bool CanCancelSales { get; set; } = false;
         public bool CanEditProducts { get; set; } = false;
         public bool CanViewProfits { get; set; } = false;
+        public int CompanyId { get; set; }
     }
 }

@@ -19,5 +19,6 @@ namespace ControlInventario.Shared.Models
         public string? VoucherType { get; set; }
         public string? CustomerPhone { get; set; }
         public string? CustomerEmail { get; set; }
+        public int CompanyId { get; set; }
     }
 }

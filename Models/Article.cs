@@ -150,8 +150,9 @@ namespace ControlInventario.Shared.Models
         [NotMapped]
         public string? LoggedUserFullName { get; set; }
 
-        public bool IsSynced { get; set; } = true;
-        public DateTime LastModified { get; set; } = DateTime.Now;
-        public bool IsActive { get; set; } = true;
+        public bool? IsActive { get; set; }
+        public bool? IsSynced { get; set; }
+        public DateTime? LastModified { get; set; }
+        public int CompanyId { get; set; }
     }
 }

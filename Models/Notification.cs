@@ -9,5 +9,6 @@ namespace ControlInventario.Shared.Models
 
         [StringLength(255)]
         public string? NotificationName { get; set; }
+        public int CompanyId { get; set; }
     }
 }
