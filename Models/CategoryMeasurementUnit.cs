@@ -5,5 +5,6 @@
         public int Id { get; set; }
         public int CategoryId { get; set; }
         public int MeasurementUnitId { get; set; }
+        public int CompanyId { get; set; }
     }
 }

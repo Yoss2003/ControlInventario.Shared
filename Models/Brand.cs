@@ -17,5 +17,6 @@ namespace ControlInventario.Shared.Models
         [StringLength(255)]
         public string Name { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
+        public int CompanyId { get; set; }
     }
 }

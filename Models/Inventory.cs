@@ -23,5 +23,6 @@ namespace ControlInventario.Shared.Models
 
         public string? Alias { get; set; }
         public bool IsActive { get; set; } = true;
+        public int CompanyId { get; set; }
     }
 }

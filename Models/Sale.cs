@@ -26,6 +26,7 @@
         public string? Notes { get; set; }
         public decimal? AmountReceived { get; set; }
         public decimal? ChangeGiven { get; set; }
+        public int CompanyId { get; set; }
         public List<SaleDetail> SaleDetails { get; set; } = new List<SaleDetail>();
     }
 }

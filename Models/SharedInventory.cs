@@ -17,7 +17,7 @@ namespace ControlInventario.Shared.Models
         public DateTime SharedDate { get; set; } = DateTime.Now;
         [JsonIgnore]
         public Inventory? Inventory { get; set; }
-        [JsonIgnore]
         public User? User { get; set; }
+        public int CompanyId { get; set; }
     }
 }

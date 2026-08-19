@@ -11,5 +11,6 @@ namespace ControlInventario.Shared.Models
         [Required] public string ModuleName { get; set; } = string.Empty;
         [Required] public string ActionName { get; set; } = string.Empty;
         public string? Detail { get; set; }
+        public int CompanyId { get; set; }
     }
 }

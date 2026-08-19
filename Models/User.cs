@@ -14,6 +14,7 @@
         public int RoleId { get; set; }
         public Role? Role { get; set; }
         public int? CompanyId { get; set; }
+        public Company? Company { get; set; }
         public int StatusId { get; set; } = 2;
         public bool MustChangePassword { get; set; } = true;
         public string? TwoFactorSecret { get; set; }

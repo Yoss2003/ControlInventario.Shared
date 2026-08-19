@@ -17,6 +17,7 @@ namespace ControlInventario.Shared.Models
         public string? HireDate { get; set; }
         public int? ContractTypeId { get; set; }
         public int StatusId { get; set; }
+        public int CompanyId { get; set; }
 
         [JsonIgnore]
         public User? User { get; set; }
