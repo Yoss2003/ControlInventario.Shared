@@ -27,6 +27,7 @@
         public decimal? AmountReceived { get; set; }
         public decimal? ChangeGiven { get; set; }
         public int CompanyId { get; set; }
+        public bool? IsSynced { get; set; } = false;
         public List<SaleDetail> SaleDetails { get; set; } = new List<SaleDetail>();
     }
 }
