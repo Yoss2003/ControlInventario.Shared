@@ -150,8 +150,13 @@ namespace ControlInventario.Shared.Models
         [NotMapped]
         public string? LoggedUserFullName { get; set; }
 
-        public bool? IsActive { get; set; }
-        public bool? IsSynced { get; set; }
+        // 🚀 CERO DEUDA TÉCNICA: Tipado estricto y valores por defecto
+        [Required]
+        public bool IsActive { get; set; } = true;
+
+        [Required]
+        public bool IsSynced { get; set; } = false;
+
         public DateTime? LastModified { get; set; }
         public int CompanyId { get; set; }
     }
