@@ -34,6 +34,14 @@ namespace ControlInventario.Shared.Models
         public string? DeletionUser { get; set; }
         public bool IsActive { get; set; } = true;
         public int CompanyId { get; set; }
+
+        public string? Label1 { get; set; }
+        public string? Label2 { get; set; }
+        public string? Label3 { get; set; }
+        public string? Label4 { get; set; }
+        public string? Label5 { get; set; }
+        public string? Label6 { get; set; }
+
         [NotMapped]
         public List<int>? SelectedUnitIds { get; set; } = new List<int>();
         public List<CategoryMeasurementUnit>? CategoryMeasurementUnits { get; set; }
