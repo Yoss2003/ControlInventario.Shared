@@ -36,11 +36,17 @@ namespace ControlInventario.Shared.Models
         public int CompanyId { get; set; }
 
         public string? Label1 { get; set; }
+        public bool IsUnique1 { get; set; }
         public string? Label2 { get; set; }
+        public bool IsUnique2 { get; set; }
         public string? Label3 { get; set; }
+        public bool IsUnique3 { get; set; }
         public string? Label4 { get; set; }
+        public bool IsUnique4 { get; set; }
         public string? Label5 { get; set; }
+        public bool IsUnique5 { get; set; }
         public string? Label6 { get; set; }
+        public bool IsUnique6 { get; set; }
 
         [NotMapped]
         public List<int>? SelectedUnitIds { get; set; } = new List<int>();

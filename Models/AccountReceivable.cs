@@ -8,9 +8,9 @@ namespace ControlInventario.Shared.Models
         public int Id { get; set; }
         [Required] public int MovementId { get; set; }
         public int InstallmentNumber { get; set; }
-        public double InstallmentAmount { get; set; }
-        public double PaidAmount { get; set; } = 0;
-        public double LateFeeAmount { get; set; } = 0;
+        public decimal InstallmentAmount { get; set; }
+        public decimal PaidAmount { get; set; } = 0;
+        public decimal LateFeeAmount { get; set; } = 0;
         [Required] public string DueDate { get; set; } = string.Empty;
         public string? PaymentDate { get; set; }
         [Required] public string Status { get; set; } = "Pending";

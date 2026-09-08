@@ -159,5 +159,7 @@ namespace ControlInventario.Shared.Models
 
         public DateTime? LastModified { get; set; }
         public int CompanyId { get; set; }
+
+        public virtual ICollection<ArticleDetails> Details { get; set; } = new List<ArticleDetails>();
     }
 }

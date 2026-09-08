@@ -7,7 +7,7 @@ namespace ControlInventario.Shared.Models
         [Key]
         public int Id { get; set; }
         [Required] public int InstallmentId { get; set; }
-        public double PaymentAmount { get; set; }
+        public decimal PaymentAmount { get; set; }
         [Required] public string PaymentDate { get; set; } = string.Empty;
         public string? Observation { get; set; }
         public int CompanyId { get; set; }

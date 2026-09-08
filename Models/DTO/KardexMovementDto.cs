@@ -11,11 +11,11 @@ namespace ControlInventario.Shared.Models.DTO
         public string Observation { get; set; } = string.Empty;
         public string Recipient { get; set; } = string.Empty;
         public bool HasRecipient => !string.IsNullOrWhiteSpace(Recipient);
-        public double Amount { get; set; }
-        public double SalePrice { get; set; }
-        public double TotalValue => Amount * SalePrice;
+        public decimal Amount { get; set; }
+        public decimal SalePrice { get; set; }
+        public decimal TotalValue => Amount * SalePrice;
         public string AmountDisplay => ActionId == 1 ? $"+{Amount} un." : (ActionId == 2 ? $"-{Amount} un." : $"{Amount} un.");
-        public double RunningBalance { get; set; }
+        public decimal RunningBalance { get; set; }
     }
 
     public class ProductKardexGroup : INotifyPropertyChanged
