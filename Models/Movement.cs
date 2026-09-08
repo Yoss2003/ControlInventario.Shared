@@ -11,9 +11,9 @@ namespace ControlInventario.Shared.Models
         [Required] public int ActionId { get; set; }
         [Required] public string MovementDate { get; set; } = string.Empty;
         public string? Observation { get; set; }
-        public double? Amount { get; set; }
+        public decimal? Amount { get; set; }
         public string? Recipient { get; set; }
-        public double? SalePrice { get; set; }
+        public decimal? SalePrice { get; set; }
         public string? DocumentNumber { get; set; }
         public string? PaymentMethod { get; set; }
         public string? VoucherType { get; set; }
