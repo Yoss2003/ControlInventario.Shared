@@ -29,5 +29,6 @@ namespace ControlInventario.Shared.Models
         public string? SmtpPassword { get; set; }
         public string? SmtpApproverEmail { get; set; }
         public int CompanyId { get; set; }
+        public string? QrBilletera { get; set; }
     }
 }

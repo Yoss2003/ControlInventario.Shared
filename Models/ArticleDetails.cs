@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ControlInventario.Shared.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace ControlInventario.Shared.Models
 {
-    public class ArticleDetails
+    public class ArticleDetails : ISyncable
     {
         [Key]
         public int Id { get; set; }
@@ -27,5 +28,6 @@ namespace ControlInventario.Shared.Models
 
         [Required]
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
+        public bool IsSynced { get; set; } = false;
     }
 }

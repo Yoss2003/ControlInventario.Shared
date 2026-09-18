@@ -15,7 +15,7 @@ namespace ControlInventario.Shared.Models
         public int ArticleId { get; set; }
         // public Product? Product { get; set; } // Descomenta esta línea si ya tienes tu modelo Product.cs creado
 
-        public int Quantity { get; set; }
+        public decimal Quantity { get; set; }
 
         public decimal UnitPrice { get; set; }
 

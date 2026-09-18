@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ControlInventario.Shared.Models.Interfaces;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Supplier
+    public class Supplier : ISyncable
     {
         [Key]
         public int Id { get; set; }
@@ -51,5 +53,6 @@ namespace ControlInventario.Shared.Models
         public string? Departamento { get; set; }
         public bool IsActive { get; set; } = true;
         public int CompanyId { get; set; }
+        public bool IsSynced { get; set; } = false;
     }
 }

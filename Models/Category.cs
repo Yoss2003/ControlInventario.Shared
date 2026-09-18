@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ControlInventario.Shared.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 { 
-    public class Category
+    public class Category : ISyncable
     {
         [Key]
         public int Id { get; set; }
+        public bool IsSynced { get; set; } = false;
 
         [Required]
         public int InventoryId { get; set; }
@@ -49,7 +51,8 @@ namespace ControlInventario.Shared.Models
         public bool IsUnique6 { get; set; }
 
         [NotMapped]
-        public List<int>? SelectedUnitIds { get; set; } = new List<int>();
+        public List<int>? SelectedUnitIds { get; set; } = [];
+
         public List<CategoryMeasurementUnit>? CategoryMeasurementUnits { get; set; }
     }
 }
