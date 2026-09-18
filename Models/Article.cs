@@ -1,11 +1,15 @@
-﻿using System;
+﻿using ControlInventario.Shared.Models.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Article
+    public class Article : ISyncable, INotifyPropertyChanged
     {
+        private decimal _quantityInCart;
+
         // ==========================================
         // 1. IDENTIDAD PRINCIPAL
         // ==========================================
@@ -19,8 +23,7 @@ namespace ControlInventario.Shared.Models
         public int CategoryId { get; set; }
 
         [Required]
-        public int BrandId { get; set; }
-
+        public int? BrandId { get; set; }
 
         // ==========================================
         // 2. DATOS DE RASTREO
@@ -48,7 +51,6 @@ namespace ControlInventario.Shared.Models
 
         public string? Presentation { get; set; }
 
-
         // ==========================================
         // 3. LOGÍSTICA Y STOCK
         // ==========================================
@@ -75,7 +77,6 @@ namespace ControlInventario.Shared.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal? ConversionFactor { get; set; }
 
-
         // ==========================================
         // 4. FINANZAS Y PROVEEDORES
         // ==========================================
@@ -92,7 +93,6 @@ namespace ControlInventario.Shared.Models
 
         public int? SupplierId { get; set; }
 
-
         // ==========================================
         // 5. ASIGNACIONES (ACTIVO FIJO)
         // ==========================================
@@ -106,7 +106,6 @@ namespace ControlInventario.Shared.Models
         public int? UsefulLifeMonths { get; set; }
 
         public DateTime? WarrantyEndDate { get; set; }
-
 
         // ==========================================
         // 6. FECHAS Y AUDITORÍA
@@ -125,7 +124,6 @@ namespace ControlInventario.Shared.Models
         [Required]
         public int ActionId { get; set; }
 
-
         // ==========================================
         // 7. MULTIMEDIA Y NOTAS
         // ==========================================
@@ -137,12 +135,22 @@ namespace ControlInventario.Shared.Models
 
         public string? MainVoucherPath { get; set; }
 
-
         // ==========================================
         // 8. PROPIEDADES VIRTUALES (No Mapeadas)
         // ==========================================
         [NotMapped]
-        public int QuantityInCart { get; set; }
+        public decimal QuantityInCart
+        {
+            get => _quantityInCart;
+            set
+            {
+                if (_quantityInCart != value)
+                {
+                    _quantityInCart = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         [NotMapped]
         public int? LoggedUserId { get; set; }
@@ -150,16 +158,23 @@ namespace ControlInventario.Shared.Models
         [NotMapped]
         public string? LoggedUserFullName { get; set; }
 
-        // 🚀 CERO DEUDA TÉCNICA: Tipado estricto y valores por defecto
         [Required]
         public bool IsActive { get; set; } = true;
-
-        [Required]
         public bool IsSynced { get; set; } = false;
 
         public DateTime? LastModified { get; set; }
         public int CompanyId { get; set; }
 
-        public virtual ICollection<ArticleDetails> Details { get; set; } = new List<ArticleDetails>();
+        public virtual ICollection<ArticleDetails> Details { get; set; } = [];
+
+        // ==========================================
+        // 9. MOTOR DE NOTIFICACIONES (INotifyPropertyChanged)
+        // ==========================================
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

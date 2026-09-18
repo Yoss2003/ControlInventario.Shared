@@ -1,15 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ControlInventario.Shared.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Movement
+    public class Movement : ISyncable
     {
         [Key]
         public int Id { get; set; }
+
         [Required] public int ArticleId { get; set; }
         public int? EmployeeId { get; set; }
+
         [Required] public int ActionId { get; set; }
         [Required] public string MovementDate { get; set; } = string.Empty;
+
         public string? Observation { get; set; }
         public decimal? Amount { get; set; }
         public string? Recipient { get; set; }
@@ -20,5 +25,8 @@ namespace ControlInventario.Shared.Models
         public string? CustomerPhone { get; set; }
         public string? CustomerEmail { get; set; }
         public int CompanyId { get; set; }
+
+        public string? PhotoPath { get; set; }
+        public bool IsSynced { get; set; } = false;
     }
 }
