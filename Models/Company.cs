@@ -1,6 +1,8 @@
-﻿namespace ControlInventario.Shared.Models
+﻿using ControlInventario.Shared.Models.Interfaces;
+
+namespace ControlInventario.Shared.Models
 {
-    public class Company
+    public class Company : ISoftDelete
     {
         public int Id { get; set; }
         public string BusinessName { get; set; } = string.Empty;
@@ -11,8 +13,7 @@
 
         public bool IsActive { get; set; } = true;
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
-        
-        // [JsonIgnore] // Úsalo si en el futuro te da problemas de bucle
+
         public List<User>? Users { get; set; }
     }
 }
