@@ -1,10 +1,9 @@
-﻿using ControlInventario.Shared.Models.Interfaces;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Employee : ISoftDelete
+    public class Employee
     {
         public int Id { get; set; }
         public int? UserId { get; set; }
@@ -27,8 +26,6 @@ namespace ControlInventario.Shared.Models
         public string? PictureUrl { get; set; }
         public bool IsActive { get; set; } = true;
 
-        public DateTime? DeletionDate { get; set; }
-        public string? DeletionUser { get; set; }
         [NotMapped]
         public string Initial => string.IsNullOrEmpty(FirstName) ? "" : FirstName[0].ToString().ToUpper();
     }
