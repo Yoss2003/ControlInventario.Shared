@@ -1,8 +1,8 @@
-﻿using ControlInventario.Shared.Models.Interfaces;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
-    public class User : ISoftDelete
+    public class User
     {
         public int Id { get; set; }
         public string? Username { get; set; }
@@ -21,12 +21,12 @@ namespace ControlInventario.Shared.Models
         public bool MustChangePassword { get; set; } = true;
         public string? TwoFactorSecret { get; set; }
         public bool IsTwoFactorEnabled { get; set; }
-        
 
         // Puente hacia sus datos biográficos
         public Employee? Employee { get; set; }
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
-        public DateTime DeletionDate { get; set; }
-        public string? DeletionUser { get; set; }
+
+        [NotMapped]
+        public int? AssignedInventoryId { get; set; }
     }
 }

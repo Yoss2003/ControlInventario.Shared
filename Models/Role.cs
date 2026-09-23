@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace ControlInventario.Shared.Models
+﻿namespace ControlInventario.Shared.Models
 {
     public class Role
     {
@@ -9,4 +7,4 @@ namespace ControlInventario.Shared.Models
         public string Description { get; set; } = string.Empty;
         public List<RolePermission>? RolePermissions { get; set; }
     }
-} 
+}
