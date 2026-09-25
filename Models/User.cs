@@ -28,5 +28,8 @@ namespace ControlInventario.Shared.Models
 
         [NotMapped]
         public int? AssignedInventoryId { get; set; }
+        
+        [NotMapped]
+        public string? Token { get; set; }
     }
 }
