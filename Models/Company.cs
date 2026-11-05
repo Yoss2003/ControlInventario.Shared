@@ -11,8 +11,8 @@
 
         public bool IsActive { get; set; } = true;
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
-
-        // [JsonIgnore] // Úsalo si en el futuro te da problemas de bucle
         public List<User>? Users { get; set; }
+        public DateTime? DeletionDate { get; set; }
+        public string? DeletionUser { get; set; }
     }
 }

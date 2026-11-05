@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Supplier : ISyncable
+    public class Supplier
     {
         [Key]
         public int Id { get; set; }
@@ -53,6 +53,5 @@ namespace ControlInventario.Shared.Models
         public string? Departamento { get; set; }
         public bool IsActive { get; set; } = true;
         public int CompanyId { get; set; }
-        public bool IsSynced { get; set; } = false;
     }
 }

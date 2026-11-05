@@ -4,11 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 { 
-    public class Category : ISyncable
+    public class Category
     {
         [Key]
         public int Id { get; set; }
-        public bool IsSynced { get; set; } = false;
 
         [Required]
         public int InventoryId { get; set; }
@@ -26,7 +25,7 @@ namespace ControlInventario.Shared.Models
         public string? Description { get; set; }
 
         [Required]
-        public int IsReturnable { get; set; } = 1;
+        public bool IsReturnable { get; set; } = true;
 
         public DateTime? CreationDate { get; set; }
         public string? CreationUser { get; set; }

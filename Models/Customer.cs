@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Customer : ISyncable
+    public class Customer
     {
         [Key]
         public int Id { get; set; }
@@ -31,6 +31,5 @@ namespace ControlInventario.Shared.Models
 
         [NotMapped]
         public string Initial => string.IsNullOrEmpty(Name) ? "" : Name[0].ToString().ToUpper();
-        public bool IsSynced { get; set; } = false;
     }
 }

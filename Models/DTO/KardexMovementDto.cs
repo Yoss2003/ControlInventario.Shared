@@ -7,7 +7,7 @@ namespace ControlInventario.Shared.Models.DTO
     {
         public int Id { get; set; }
         public int ActionId { get; set; }
-        public string MovementDate { get; set; } = string.Empty;
+        public DateTime MovementDate { get; set; } = DateTime.UtcNow;
         public string Observation { get; set; } = string.Empty;
         public string Recipient { get; set; } = string.Empty;
         public bool HasRecipient => !string.IsNullOrWhiteSpace(Recipient);

@@ -111,7 +111,7 @@ namespace ControlInventario.Shared.Models
         // 6. FECHAS Y AUDITORÍA
         // ==========================================
         [Required]
-        public DateTime RegistrationDate { get; set; } = DateTime.Now;
+        public DateTime RegistrationDate { get; set; } = DateTime.UtcNow;
 
         public DateTime? AcquisitionDate { get; set; }
 

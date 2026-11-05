@@ -25,11 +25,13 @@ namespace ControlInventario.Shared.Models
         // Puente hacia sus datos biográficos
         public Employee? Employee { get; set; }
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
+        public string? FcmToken { get; set; }
 
         [NotMapped]
         public int? AssignedInventoryId { get; set; }
         
         [NotMapped]
         public string? Token { get; set; }
+
     }
 }

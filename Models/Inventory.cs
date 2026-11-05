@@ -13,9 +13,9 @@ namespace ControlInventario.Shared.Models
         public string InventoryName { get; set; } = string.Empty;
 
         [Required]
-        public string CreationDate { get; set; } = string.Empty;
+        public DateTime CreationDate { get; set; }
 
-        public string? ModificationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
 
         public int UserId { get; set; }
 
