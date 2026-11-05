@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Article : ISyncable, INotifyPropertyChanged
+    public class Article : INotifyPropertyChanged
     {
         private decimal _quantityInCart;
 
@@ -160,7 +160,6 @@ namespace ControlInventario.Shared.Models
 
         [Required]
         public bool IsActive { get; set; } = true;
-        public bool IsSynced { get; set; } = false;
 
         public DateTime? LastModified { get; set; }
         public int CompanyId { get; set; }
