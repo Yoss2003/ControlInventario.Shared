@@ -4,11 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControlInventario.Shared.Models
 {
-    public class Brand : ISyncable
+    public class Brand
     {
         [Key]
         public int Id { get; set; }
-        public bool IsSynced { get; set; } = false;
 
         [Required]
         public int InventoryId { get; set; }
