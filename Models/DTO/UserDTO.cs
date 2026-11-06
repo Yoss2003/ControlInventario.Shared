@@ -1,4 +1,4 @@
-﻿namespace ControlInventario.Shared.Models.DTO
+﻿namespace InventoryAPI.Shared.Models.DTO
 {
     public class UserDTO
     {

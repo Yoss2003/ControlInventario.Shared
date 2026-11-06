@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace InventoryAPI.Models;
-
+namespace ControlInventario.Shared.Models;
 public sealed class PasswordRecoveryRequest
 {
     [Key] public int Id { get; set; }

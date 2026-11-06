@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InventoryAPI.Models;
+namespace ControlInventario.Shared.Models;
 
 // Custodia de stock: NO da acceso al inventario completo del remitente.
 public sealed class ArticleAssignment

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace InventoryAPI.Models;
+namespace ControlInventario.Shared.Models;
 
 public sealed class ArticleUnitOperation
 {
